@@ -72,7 +72,7 @@ def test_delete_user():
     response = requests.delete(url)
     assert response.status_code == 204, f"Expected status 204, got {response.status_code}"
     assert response.text == "", "Ответ тела DELETE должен быть пустым."
-
+    print("DELETE /api/users/2: Ошибка соответствует ожиданиям.")
 # 5. Тесты для некорректного POST
 
 def test_create_user():
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     test_get_user_negative()
     test_get_users()
     test_post_users()
+    test_post_users_negative()
     test_put_user()
     test_delete_user()
     test_create_user()
-    test_post_users_negative()
